@@ -1,0 +1,152 @@
+/*This customizes the whole body*/
+body{
+  text-align: center;
+  margin: 50px;
+  font-size: 20px;
+}
+
+/*This customizes the control panel*/
+#control {
+  margin: 30px;
+}
+
+/*This customizes the buttons*/
+button {
+  font-size: 15px;
+  width: 60px;
+}
+
+/*This styles for the arms in idle position*/
+#left_arm {
+  transform:rotate(-80deg) translate(-230px, -60px);
+}
+
+#right_arm {
+  transform:rotate(80deg) translate(25px, -306px);
+}
+
+/*__ANIMATION__*/
+/*.animate class is to start the animation when #start_ani button is clicked*/
+
+/*Stage 1: The robot turns purple, bows and tips his hat*/
+/*Stage 2: The robot turns yellow and goes back to the straight posture*/
+
+/*The robot will tilt in stage 1*/
+@keyframes robotTilt {
+  0% {transform: none;}
+  50% {transform: rotate(20deg);}
+  100% {transform: none;}
+}
+
+/*This assigns the robotTilt animation to #sir_robot*/
+#sir_robot.animate {
+  animation: robotTilt 5s 1 ease;
+}
+
+/*The robot's left arm will lift to tip his hat*/
+@keyframes leftArmLift {
+  0% {transform:rotate(-80deg) translate(-230px, -60px);}
+  20% {transform: rotate(80deg) translate(85px,-180px); fill:#442187;}
+  50% {transform: rotate(60deg) translate(60px,-130px); fill:#442187;}
+  100% {transform:rotate(-70deg) translate(-210px, -40px); fill:#FCE94F;}
+}
+
+/*This assigns the leftArmLift animation to #left_arm*/
+#left_arm.animate {
+  animation: leftArmLift 5s 1 ease;
+}
+
+/*The robot's right arm will lift in stage 1*/
+@keyframes rightArmLift {
+  0% {transform:rotate(80deg) translate(25px, -306px);}
+  50% {transform: rotate(10deg) translate(45px,-40px); fill:#442187;}
+  100% {transform:rotate(70deg) translate(45px, -275px); fill:#FCE94F;}
+}
+
+/*This assigns the rightArmLift animation to #right_arm*/
+#right_arm.animate {
+  animation: rightArmLift 5s 1 ease;
+}
+
+/*The hat will dip when the robot's left arm tips it*/
+@keyframes hatDip {
+  0% {transform: rotate(0deg) translate(0px,-0px);}
+  50% {transform: rotate(-45deg) translate(-120px, 20px);}
+  100% {transform: rotate(0deg) translate(0px,-0px);}
+}
+
+/*This assigns the hatDip animation to #hat*/
+#hat.animate {
+  animation: hatDip 3s 1s 1 ease;
+}
+
+/*This will change just the head in stage 1*/
+@keyframes headChange {
+  0% {transform: scale(1) translate(0px,0px);}
+  50% {transform: scale(1, 1.5) translate(0px,-50px);}
+  100% {transform: scale(1) translate(0px,0px);}
+}
+
+/*This assigns the headChange animation to #head*/
+#head.animate {
+  animation: headChange 3s 1s;
+}
+
+/*The eye will be filled with colour in stage 1 and skewed in stage 2*/
+@keyframes eyeChange {
+  0% {transform: none;}
+  25% {fill:#FF2714; transform: none;}
+  100% {transform: skew(20deg, 20deg) translate(-20px,-30px);}
+}
+
+/*This assigns the eyeChange animation to #eye*/
+#eye.animate {
+  animation: eyeChange 5s 0.5s;
+}
+
+/*The robot' monocle will be green and scaled bigger in stage 1, and turns red and skewed in stage 2*/
+@keyframes monoChange {
+  0% {fill: white;}
+  25% {fill: #B6FC85;}
+  40% {fill: #B6FC85;transform: scale(1.2) translate(-20px,-20px);}
+  100% {fill: #FF2714; transform: skew(-40deg, -10deg) translate(120px,42px);}
+}
+
+/*This assigns the monoChange animation to #monocle*/
+#monocle.animate {
+  animation: monoChange 5s 0.5s;
+}
+
+/*The robot's moustache will be scaled bigger in stage 2*/
+@keyframes moustacheChange {
+  0% {transform: none;}
+  100% {transform:scale(1.5) translate(-42px,-40px);}
+}
+
+/*This assigns the moustacheChange animation to #moustache*/
+#moustache.animate {
+  animation: moustacheChange 4s 2s 1 ease;
+}
+
+/*The robot's bowtie turns yellow and scaled bigger in stage 1, turns blue in stage 2*/
+@keyframes bowTieChange {
+  25% {fill:#FCDF85;}
+  40% {fill:#FCDF85; transform:scale(1.5) translate(-40px,-45px);}
+  100% {fill:#242F8A;transform: scale(1.5) translate(-40px,-45px);}
+}
+
+/*This assigns the bowTieChange animation to #bowtie*/
+#bowtie.animate {
+  animation: bowTieChange 5s 0.5s;
+}
+
+/*The robot turns purple in stage 1, yellow in stage 2*/
+@keyframes changeColour {
+  50% {fill: #442187;}
+  100% {fill: #FCE94F;}
+}
+
+/*This assigns the changeColour animation to #the_head and #the_body*/
+#the_head.animate, #the_body.animate{
+  animation: changeColour 5s 1 ease;
+}

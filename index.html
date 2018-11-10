@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>The Machine</title>
+    <!--This will link the css file to html-->
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+    <!--This is the robot with an id #sir_robot-->
+    <svg width=300px height=300px id="sir_robot">
+      <!--This is the hat of the robot, consists of the top part and the rim.-->
+      <g id="hat">
+        <rect id="hat_top" x="105" y="10" width="40" height="50" />
+        <rect id="hat_rim" x="100" y="60" width="50" height="5" rx="5" ry="5" />
+      </g>
+      <!--This is the head part of the robot, consists of just the head, the eye, the monocle, and the moustache group-->
+      <g id="head">
+        <path id="the_head" d="M70 130 C70 50 180 50 180 130 Z" fill="white" stroke="black" stroke-width="4" />
+        <circle id="eye" cx=110 cy=100 r=5px fill="black"/>
+        <circle id="monocle" cx=140 cy=98 r=10px fill="white" stroke="black" stroke-width="3"/>
+        <!--This is the moustache group-->
+        <g id="moustache">
+          <polygon id="left_moustache" points="125,115 125,123 95,110" fill="black"/>
+          <polygon id="left_moustache" points="127,115 127,123 155,110" fill="black"/>
+        </g>
+      </g>
+
+      <!--This is the body part of the robot, consists of just the body, the bowtie, the left and right arm.-->
+      <g id="body">
+        <path id="the_body" d="M75 140 C75 300 180 300 175 140 Z" fill="white" stroke="black" stroke-width="4" />
+        <polygon id="bowtie" points="130,135 100,150 100,125 145,150 145,125" fill="black"/>
+        <ellipse id="left_arm" cx="50" cy="150" rx="40" ry="10" fill="white" stroke="black" stroke-width="4"></ellipse>
+        <ellipse id="right_arm" cx="200" cy="150" rx="40" ry="10" fill="white" stroke="black" stroke-width="4"></ellipse>
+      </g>
+
+    </svg>
+
+    <!--This is where the buttons are, which control the animation.-->
+    <section id="control">
+      <fieldset>
+        <legend>This is Sir Robot</legend>
+        <!--This button starts the animation.-->
+        <button id="start_ani">Go!</button>
+        <!--This button stop and/or restart the animation.-->
+        <button id="stop_ani">Stop!</button>
+      </fieldset>
+    </section>
+
+    <!--This will link the javascript file to html-->
+    <script src="animation.js"></script>
+
+  </body>
+</html>
